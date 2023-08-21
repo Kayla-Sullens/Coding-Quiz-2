@@ -46,3 +46,46 @@ var questions = [
         ]
     },
 ];
+
+var startBtn = document.querySelector("#begin");
+var timer = document.querySelector("#timer");
+var currentQuestionIndex = 0;
+var score = 0;
+var secondsLeft = 60;
+var interval = 0;
+var penalty = 10;
+
+// Triggers the timer to start
+startBtn.addEventListener("click", function () {
+    if (interval === 0) {
+        interval = setInterval(function () {
+            secondsLeft--;
+            timer.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(interval);
+                allDone();
+                timer.textContent = "Out of Time!";
+            }
+        }, 1000);
+    }
+    showQuestion();
+});
+
+var questionElement = document.getElementById("question");
+var answerButton = document.getElementById("answer-button");
+
+function showQuestion(){
+    var currentQuestion = questions[currentQuestionIndex];
+    var questionNumber = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNumber + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        var button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButton.appendChild(button);
+    });
+}
+
+startQuiz();
