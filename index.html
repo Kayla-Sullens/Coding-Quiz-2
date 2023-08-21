@@ -10,12 +10,22 @@
 <body>
     <a href="highscores.html">View Highscores</a>
 
-    <div id="container">
-        <div id="timer"></div>
-        <div id="quizQuestions">
-            <h1>Coding Quiz</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <button class = "start" id="begin">Start Quiz</button>
+    <div id="quizContainer">
+        <div class="quizTitle">
+            <div id="timer"></div>
+                <h1>Coding Quiz</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button class = "start" id="begin">Start Quiz</button>
+            </div>
+        </div>
+        <div class="quizQuestions">
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
