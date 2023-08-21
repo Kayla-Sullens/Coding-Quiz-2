@@ -63,4 +63,15 @@
 
 #timer {
     float: right;
+    font-size: x-large;
+    padding-right: 20px;
+    color:rgb(173, 12, 12)
+}
+
+.correct {
+    background: rgb(47, 108, 47);
+}
+
+.incorrect {
+    background: rgb(208, 45, 45);
 }
