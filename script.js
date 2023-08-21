@@ -2,27 +2,47 @@
 var questions = [
     {
         question: "How do you add a comment to a CSS or JS file?",
-        choices: ["*Comment*", "//Comment", "/*Comment", "--Comment--"],
-        answer: "//Comment"
+        answers: [
+            { text: "*Comment*", correct: false},
+            { text: "//Comment", correct: true},
+            { text: "/*Comment", correct: false},
+            { text: "--Comment--", correct: false},
+        ]
     },
     {
         question: "What is the first index of an array?",
-        choices: ["0", "1", "First", "Idk"],
-        answer: "0"
+        answers: [
+            { text: "0", correct: true},
+            { text: "1", correct: false},
+            { text: "First", correct: false},
+            { text: "Idk", correct: false},
+        ]
     },
     {
         question: "Which CSS property gives something rounded corners?",
-        choices: ["corner-round", "rounding", "border-radius", "border"],
-        answer: "border-radius"
+        answers: [
+            { text: "corner-round", correct: false},
+            { text: "rounding", correct: false},
+            { text: "border-radius", correct: true},
+            { text: "border", correct: false},
+        ]
     },
     {
         question: "What is a short section of code written to complete a task called?",
-        choices: ["Function", "Array", "Loop", "Variable"],
-        answer: "Function"
+        answers: [
+            { text: "Variable", correct: false},
+            { text: "Array", correct: false},
+            { text: "Loop", correct: false},
+            { text: "Function", correct: true},
+        ]
     },
     {
         question: "String values must be enclosed with ___",
-        choices: ["parenthesis", "quotes", "commas", "curly brackets"],
-        answer: "quotes"
+        answers: [
+            { text: "paranthesis", correct: false},
+            { text: "quotes", correct: true},
+            { text: "commas", correct: false},
+            { text: "curly brackets", correct: false},
+        ]
     },
 ];
