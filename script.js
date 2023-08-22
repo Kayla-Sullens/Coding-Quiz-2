@@ -109,7 +109,7 @@ function selectAnswer(event) {
         secondsLeft = secondsLeft - penalty;
         selectedBtn.classList.add("incorrect");
     }
-    button.addEventListener("click", function () {
+    selectedBtn.addEventListener("click", function () {
         continueQuiz();
     });
 }
@@ -149,4 +149,4 @@ function allDone() {
 }
 
 
-startQuiz();
+
