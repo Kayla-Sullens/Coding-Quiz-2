@@ -109,6 +109,9 @@ function selectAnswer(event) {
         secondsLeft = secondsLeft - penalty;
         selectedBtn.classList.add("incorrect");
     }
+    button.addEventListener("click", function () {
+        continueQuiz();
+    });
 }
 
 function allDone() {
@@ -138,7 +141,7 @@ function allDone() {
     function continueQuiz(event) {
         questionIndex++;
         if (questionIndex <= questions.length) {
-            nextQuestion(questionIndex);
+            showQuestion(questionIndex);
         } else {
             allDone();
         }
