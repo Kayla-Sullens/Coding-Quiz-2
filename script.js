@@ -114,6 +114,16 @@ function selectAnswer(event) {
     });
 }
 
+// Determine whether to continue quiz or end quiz
+function continueQuiz(event) {
+    questionIndex++;
+    if (questionIndex <= questions.length) {
+        showQuestion(questionIndex);
+    } else {
+        allDone();
+    }
+}
+
 function allDone() {
     questions.innerHTML = "";
     timer.innerHTML = "";
@@ -121,7 +131,7 @@ function allDone() {
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "All done!"
-    questions.appendChild(createH1);
+    questions.appendChild("createH1");
 
 
     if (secondsLeft >= 0) {
@@ -129,23 +139,15 @@ function allDone() {
         clearInterval(interval);
         var createNewP = document.createElement("p");
         createNewP.textContent = "Your final score is: " + score;
-        questions.appendChild(createNewP);
+        questions.appendChild("createNewP");
     } else {
         score = 0;
         var timeIsUp = document.createElement("p");
         timeIsUp.textContent = "Time's up! Your final score is" + score;
-        questions.appendChild(createNewP)
+        questions.appendChild("createNewP")
     }
 
-    // Determine whether to continue quiz or end quiz
-    function continueQuiz(event) {
-        questionIndex++;
-        if (questionIndex <= questions.length) {
-            showQuestion(questionIndex);
-        } else {
-            allDone();
-        }
-    }
+    
 }
 
 
