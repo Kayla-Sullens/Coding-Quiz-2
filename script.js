@@ -49,7 +49,7 @@ var questions = [
 
 var startBtn = document.querySelector("#begin");
 var timer = document.querySelector("#timer");
-var currentQuestionIndex = 0;
+var questionIndex = 0;
 var score = 0;
 var secondsLeft = 60;
 var interval = 0;
@@ -77,9 +77,8 @@ var answerButtons = document.getElementById("answer-buttons");
 
 function showQuestion() {
     resetState();
-    var currentQuestion = questions[currentQuestionIndex];
-    var questionNumber = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNumber + ". " + currentQuestion.question;
+    var currentQuestion = questions[questionIndex];
+    questionElement.innerHTML = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
         var button = document.createElement("button");
@@ -109,15 +108,15 @@ function selectAnswer(event) {
         secondsLeft = secondsLeft - penalty;
         selectedBtn.classList.add("incorrect");
     }
-    selectedBtn.addEventListener("click", function () {
-        continueQuiz();
-    });
+    
+        setTimeout(continueQuiz, 500);
+   
 }
 
 // Determine whether to continue quiz or end quiz
 function continueQuiz(event) {
     questionIndex++;
-    if (questionIndex <= questions.length) {
+    if (questionIndex < questions.length) {
         showQuestion(questionIndex);
     } else {
         allDone();
@@ -125,28 +124,26 @@ function continueQuiz(event) {
 }
 
 function allDone() {
-    questions.innerHTML = "";
+    var pDiv = document.querySelector(".quizQuestions")
+    pDiv.innerHTML = "";
     timer.innerHTML = "";
 
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "All done!"
-    questions.appendChild("createH1");
+    pDiv.appendChild(createH1);
 
+
+    var createNewP = document.createElement("p");
 
     if (secondsLeft >= 0) {
-        score = timer;
-        clearInterval(interval);
-        var createNewP = document.createElement("p");
-        createNewP.textContent = "Your final score is: " + score;
-        questions.appendChild("createNewP");
+        createNewP.textContent = "Your final score is: " + secondsLeft;
     } else {
-        score = 0;
-        var timeIsUp = document.createElement("p");
-        timeIsUp.textContent = "Time's up! Your final score is" + score;
-        questions.appendChild("createNewP")
+        createNewP.textContent = "Time's up! Your final score is" + secondsLeft;
     }
-
+    
+    clearInterval(interval);
+    pDiv.appendChild(createNewP);
     
 }
 
