@@ -80,7 +80,8 @@
     display: none;
 }
 
-#initials, #saveScore {
+#initials, 
+#saveScore {
     width: 100px;
 }
 #response{
@@ -88,11 +89,33 @@
     display: flex;
     align-items: center;
     padding: o 35px;
-    border-top: 1px solid lightgray;
+    border-top: 1px solid rgb(156, 38, 156);
 }
 #saveScore{
-    border-color: var(--BLUE);
-    background-color: var(--offWHite);
-    color: var(--BLUE);
-    width:50%
+    border-color: black;
+    background-color: whitesmoke;
+    color: blueviolet;
+    width: 50%
+}
+
+#goBack {
+    background-color: rgb(99, 141, 197);
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    top: 30%;
+    left: 50%;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button {
+    background-color: rgb(46, 99, 169);
+    color:rgb(3, 3, 2);
+    width: 10%;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 5px;
 }

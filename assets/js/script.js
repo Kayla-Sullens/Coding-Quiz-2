@@ -55,6 +55,7 @@ var secondsLeft = 60;
 var interval = 0;
 var penalty = 10;
 var submitBtn = document.querySelector("#save-score");
+var goBack = document.querySelector("#goBack");
 
 // Triggers the timer to start
 startBtn.addEventListener("click", function () {
@@ -151,10 +152,13 @@ function allDone() {
 submitBtn.onclick = () => {
     let initials = initials.value;
     //Store Initials and Score in Local Storage
-    localStorage.setItem((localStorage.length+1), JSON.stringify(resultsDataObj));
+    localStorage.setItem((localStorage.length+1), JSON.stringify(results));
     initials.value = ""
     location.reload();
 }
 
-
+// Event listener to go back to index page
+goBack.onclick = () => {
+    window.location.replace("./index.html");
+};
 
