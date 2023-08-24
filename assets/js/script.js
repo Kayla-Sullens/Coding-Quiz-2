@@ -143,17 +143,28 @@ function allDone() {
     } else {
         createNewP.textContent = "Time's up! Your final score is" + secondsLeft;
     }
+    var quizEnd = document.querySelector("#quiz-end");
+    quizEnd.classList.remove("hide");
+    var initialsBox = document.getElementById("quizEnd");
+    initialsBox.classList.remove("hide");
     
     clearInterval(interval);
     pDiv.appendChild(createNewP);
     
 }
 
+
 submitBtn.onclick = () => {
-    let initials = initials.value;
+   
+    var initialsBox = document.querySelector("#initials");
+    let initials = initialsBox.value;
     //Store Initials and Score in Local Storage
+    var results = {
+        score: score,
+        name: initials,
+    };
     localStorage.setItem((localStorage.length+1), JSON.stringify(results));
-    initials.value = ""
+    initials = ""
     location.reload();
 }
 
@@ -161,4 +172,20 @@ submitBtn.onclick = () => {
 goBack.onclick = () => {
     window.location.replace("./index.html");
 };
+
+var goBack = document.querySelector("#goBack");
+var clear = document.querySelector("#clear");
+
+// Get local storage
+var allScores = localStorage.getItem("allScores");
+allScores = JSON.parse(allScores);
+
+if (allScores !== null) {
+    for (var i = 0; i < allScores.length; i++) {
+        var createLi = document.createElement("li");
+        createLi.textContent = allScores[i].initials + " " + allScores[i].score;
+        highScore.appendChild(createLi);
+    }
+}
+
 
