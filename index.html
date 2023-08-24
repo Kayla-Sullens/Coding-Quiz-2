@@ -10,7 +10,7 @@
 <body>
     <a href="highscores.html">View Highscores</a>
 
-    <div id="quizContainer">
+    <section id="quizContainer">
         <div class="quizTitle">
             <div id="timer"></div>
                 <h1>Coding Quiz</h1>
@@ -27,7 +27,16 @@
                 <button class="btn">Answer 4</button>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="quiz-end" class="hide text-center p-5">
+        <div class="flex-direction"><h1>End of Quiz!</h1>
+            <h3 class="score"></h3>
+            <h2>Enter Your Initials:</h2>
+            <input type="text" id="initials">
+            <button id="save-score">Submit</button>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

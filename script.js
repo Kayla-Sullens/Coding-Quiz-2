@@ -54,6 +54,7 @@ var score = 0;
 var secondsLeft = 60;
 var interval = 0;
 var penalty = 10;
+var submitBtn = document.querySelector("#save-score");
 
 // Triggers the timer to start
 startBtn.addEventListener("click", function () {
@@ -145,6 +146,14 @@ function allDone() {
     clearInterval(interval);
     pDiv.appendChild(createNewP);
     
+}
+
+submitBtn.onclick = () => {
+    let initials = initials.value;
+    //Store Initials and Score in Local Storage
+    localStorage.setItem((localStorage.length+1), JSON.stringify(resultsDataObj));
+    initials.value = ""
+    location.reload();
 }
 
 

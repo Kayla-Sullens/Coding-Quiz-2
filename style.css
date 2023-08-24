@@ -75,3 +75,24 @@
 .incorrect {
     background: rgb(208, 45, 45);
 }
+
+.hide{
+    display: none;
+}
+
+#initials, #saveScore {
+    width: 100px;
+}
+#response{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: o 35px;
+    border-top: 1px solid lightgray;
+}
+#saveScore{
+    border-color: var(--BLUE);
+    background-color: var(--offWHite);
+    color: var(--BLUE);
+    width:50%
+}
