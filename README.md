@@ -6,8 +6,8 @@ This challenge assignment had a heavy focus on JaveScript and the DOM as we focu
 
 ## Link
 
-
+https://kayla-sullens.github.io/Coding-Quiz-2/
 
 ## Screenshot
 
-
+<img width="1462" alt="Quiz" src="https://github.com/Kayla-Sullens/Coding-Quiz-2/assets/134717855/78dc6a9c-4463-4c1d-8866-538acf14dd3b">
